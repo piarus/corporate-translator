@@ -1,0 +1,16 @@
+{
+  "name": "corporatefilter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
