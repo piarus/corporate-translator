@@ -64,3 +64,14 @@ npm run test
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser. To use a different port, set the `PORT` environment variable before starting the server.
+
+<hr>
+<p align="center">
+<i>Preview response in Indonesian</i>
+  <img src="attachment/Screenshot_ID.png"/>
+</p>
+
+<p align="center">
+<i>Preview response in English</i>
+  <img src="attachment/Screenshot_EN.png"/>
+</p>

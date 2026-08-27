@@ -2,16 +2,13 @@ const express = require("express");
 const dotenv = require("dotenv");
 const path = require("path");
 
-// Membaca file .env
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware untuk membaca JSON dari body request
 app.use(express.json());
 
-// Melayani file statis (HTML, JS, CSS) dari folder "public"
 app.use(express.static(path.join(__dirname, "public")));
 
 app.post("/api/poles", async (req, res) => {
@@ -31,7 +28,6 @@ app.post("/api/poles", async (req, res) => {
         .json({ error: "Input teks dan target audiens wajib diisi." });
     }
 
-    // Tentukan System Instruction berdasarkan target (Aman di backend)
     let systemInstruction = "";
     if (target === "atasan") {
       systemInstruction = `Peran: Bertindaklah sebagai Strategic Corporate Communicator. Tugas Anda adalah mengubah draf pesan saya yang kasar, impulsif, blak-blakan, atau emosional menjadi "Bahasa Korporat" yang formal, profesional, diplomatis, dan terstruktur (menggunakan Saya/Anda atau Bapak/Ibu).
@@ -152,7 +148,6 @@ Aturan Format Teks (Anti-Robot & WhatsApp Friendly):
 
     if (result.choices && result.choices[0].message.content) {
       let rawText = result.choices[0].message.content;
-      // Membersihkan format Markdown JSON dari respons AI
       rawText = rawText
         .replace(/```json\n?/g, "")
         .replace(/```/g, "")

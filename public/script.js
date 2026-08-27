@@ -43,14 +43,12 @@ generateBtn.addEventListener("click", async () => {
     const target = document.querySelector('input[name="targetAudience"]:checked').value;
     const targetContainer = document.querySelector('input[name="targetAudience"]').closest(".grid");
 
-    // Set Loading UI
     isGenerating = true;
     generateBtn.disabled = true;
     generateBtn.classList.add("opacity-80", "cursor-not-allowed");
     loadingIcon.classList.remove("hidden");
     magicIcon.classList.add("hidden");
 
-    // Prevent user from changing input while generating
     textarea.disabled = true;
     textarea.classList.add("opacity-50", "cursor-not-allowed");
     targetContainer.classList.add("opacity-50", "pointer-events-none");
@@ -72,10 +70,8 @@ generateBtn.addEventListener("click", async () => {
 
     outputSection.classList.add("hidden");
 
-    // Call Backend
     apiData = await callBackendAPI(rawInput, target);
 
-    // Reset Loading UI
     clearInterval(loadingInterval);
     isGenerating = false;
     generateBtn.disabled = false;
@@ -83,7 +79,6 @@ generateBtn.addEventListener("click", async () => {
     loadingIcon.classList.add("hidden");
     magicIcon.classList.remove("hidden");
 
-    // Eneble user to change input
     textarea.disabled = false;
     textarea.classList.remove("opacity-50", "cursor-not-allowed");
     targetContainer.classList.remove("opacity-50", "pointer-events-none");

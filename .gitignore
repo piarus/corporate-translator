@@ -1,0 +1,14 @@
+# Ignore node dependencies
+node_modules/
+
+# Ignore environment secrets
+.env
+*.local
+
+# Ignore log files
+*.log
+npm-debug.log*
+
+# Ignore OS system files
+.DS_Store
+Thumbs.db
